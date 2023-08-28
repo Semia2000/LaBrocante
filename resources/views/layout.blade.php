@@ -11,34 +11,51 @@
         <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">
-                <img src="{{ asset("assets/images/Logo 1.png") }}" alt="Bootstrap" width="200" height="70">
-            </a>
-            <div class="recherche">
-                <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Articles
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-            </li>
-            <form class="d-flex" role="search"><input class="form-control me-2" type="search" placeholder="Rechercher des articles" aria-label="Search">
-            </form>
-            </div>
-            <div class="menus">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="{{ route('detailproduit') }}">Vendre un article</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ route('bienvenue') }}">S'incrire <i class=""><img src="{{ asset("assets/images/user-solid1.png") }}" alt=""></i></a>
-                </li>
-              </ul>
-            </div>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                    <a class="navbar-brand" href="#">
+                    <img src="{{ asset('assets/images/Logo 1.png') }}" alt="Brocante" width="250" height="70">
+                    </a>
+                <div class="search-item">
+                    <div class="dropdown">
+                        <div class="dropdown-icon dropdown-toggle" id="dropdown-icon" data-bs-toggle="dropdown" aria-expanded="false" >
+                        Article
+                        </div>
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                    <div class="vertical-line"></div>
+                    <div class="search-icon">
+                        <i class="bi bi-search"></i>
+                    </div>
+                    <div class="search-box">
+                        <input type="text" placeholder="Faire une recherche...">
+                    </div>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Acheter un article</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">S'inscrire<i class="bi bi-person-circle"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <i class="bi bi-list-nested" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style="font-size:40px;margin-left: 160px;color:#FABC01;font-weight:bolder;margin-top: 5px;"></i>
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            ...
+                        </div>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
         </nav>
         @yield('content')
     </body>

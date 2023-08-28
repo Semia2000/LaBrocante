@@ -1,41 +1,85 @@
+body{
+    max-width: 100%;
+    font-family:Inria Sans;
+}
+/* Navigation barre */
 li{
     list-style: none;
 }
 a{
     text-decoration: none;
-}
-.recherche{
-    display: flex;
-    background-color:#AAAAAA;
-}
-.menus {
-    margin-left: 15%;
-}
-.menus li{
-margin-left: 3%;
-justify-content: center;
-    align-items: center;
 
 }
-.menus a{
-    color: white;
-    width: 200px;
-    height: 40px;
+nav{
+    margin-left: 81px;
+}
+.search-item{
+    margin-left: 80px;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+
+.search-item {
+    display: flex;
+    align-items: center;
+    background-color:#F4F4F4 ;
+}
+
+.dropdown-icon,
+.search-icon {
+    margin-right: 10px;
+    cursor: pointer;
+    padding: 5px 20px 5px 20px;
+    border: 0px 3px 0px 0px;
+    border-radius: 3px 0px 0px 3px;
+}
+
+.vertical-line {
+    width: 2px;
+    height: 30px;
+    background-color: #AAAAAA;
+    margin: 0 10px;
+}
+
+.search-box input {
+    border: none;
+    padding: 5px;
     border-radius: 5px;
-    font:Inria Sans;
+    background-color:#F4F4F4;
+    border-radius: 0px 3px 3px 0px;
+}
+.liens, .nav-link{
+    color: white !important;
     font-weight: 700;
-    background-color:#FABC01;
+    background-color: #FABC01;
+    border-radius: 5px;
+    padding: 5px 20px 5px 20px;
 }
 h1, p {
     margin: 0;
     padding: 0;
 }
+#navbarNav{
+    margin-left: 200px;
+}
+#navbarNav li a{
+    margin-left: 70px;
+    box-shadow:0px 4px 4px 0px #D9D9D9;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    margin-top: 15px;
+}
+
 /* acceuil */
-.hero {
+.imgacceuil {
     position: relative;
     width: 100%;
 }
-.hero img {
+.imgacceuil img {
     width: 100%;
     object-fit: cover;
 }
@@ -55,6 +99,14 @@ h1, p {
     text-align: center;
     border-radius: 5px;
 }
+.overlay a{
+    width: 200px;
+    height: 40px;
+    font-weight: 700;
+    size: 25px;
+    line-height: 29px;
+    padding: 5px 20px 5px 20px;
+}
 
 .overlay h1 {
     font-size: 3rem;
@@ -64,71 +116,224 @@ h1, p {
 .overlay p {
     font-size: 1.5rem;
 }
+
+.line{
+border: 3px solid #FABC01;
+}
+
 .produits{
     margin-top: 5rem;
+    max-width:100%;
     display: grid;
     place-items: center;
 }
 .produits h1{
     margin-bottom: 0.5rem;
+    font-size: 2rem;
 }
 .achievements-container {
     padding-top: 2%;
     display: flex;
 }
-  .square{
-    width: 200px;
-    height: 200px;
-    border: 2px solid #FABC01;
+.achievements-container .produit{
+    margin-left:40px;
+}
+.achievements-container .produit:first-child{
+    margin-left: 0;
+}
+.produits .square{
+    width: 250px;
+    height: 250px;
+    border: 3px solid #FABC01;
     position: relative;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
-    border-radius: 2px;
-  }
+    border-radius: 5px;
+    place-items: center;
+    display: grid;
+}
 
-  .square img {
+  .produit .square img {
     max-width: 80%;
-    max-height: 300px;
+    max-height: 90%;
     margin: 2px;
-  }
-  .line{
-   width: 75%;
-   border: 2px solid #FABC01;
-  }
+}
+
+.produit .info{
+    font-weight: bold;
+    font-size:0.2rem;
+    margin-top: 1rem;
+}
+.produit .info h1{
+    font-size:22px;
+    font-weight:bold;
+}
+.info i{
+    margin-left: 80px;
+}
+.produits .liens{
+    width: 120px;
+    height: 40px;
+    font-size: 20px;
+    box-shadow:0px 5px 5px #858484;
+}
+/* detailproduit */
+.ficheproduit{
+    width: 100%;
+    display: flex;
+    margin-top: 100px;
+}
+.infoproduit{
+    width: 35%;
+    margin-left: 100px;
+}
+.imgproduits{
+    width: 90%;
+    height: 600px;
+    border-radius: 7px;
+    box-shadow:1px 1px 1px 2px #D9D9D9;
+    border: 1px;
+    margin-left: 35px;
+}
+.imgproduits img{
+    width: 300px;
+    height: 300px;
+    transform: translate(30%,35%);
+}
+.imagesproduit,.actionproduit{
+    display: flex;
+}
+.imagesproduit img{
+    width: 176px;
+    height: 180px;
+    border-radius: 5px;
+    box-shadow:1px 1px 1px 2px #D9D9D9;
+    border: 1px;
+    margin-left: 10px;
+}
+.imagesproduit{
+    margin-top: 50px;
+}
+.imagesproduit i{
+    font-size: 25px;
+    color: #142A54;
+    margin-top: 70px
+}
+.actionproduit a{
+    margin-left: 20px;
+    margin-top: 40px;
+    margin-left: 50px;
+    font-size:25px ;
+    font-weight: 700;
+}
+.infodetail{
+    margin-left: 50px;
+    width: 45%;
+}
+.infodetail h1{
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.infodetail i{
+    font-size: 29px;
+}
+.infodetail i:first-child{
+margin-right: 120px;
+}
+.infodetail P{
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.infodetail h3{
+    font-size: 40px;
+    line-height: 48px;
+    font-weight: 700;
+    color: #FABC01;
+    margin-top: 10px;
+}
+.detailproduit .line{
+    margin-top: 110px;
+}
+.infocontainer{
+    margin-top: 40px;
+    justify-content: center;
+    width: 660px;
+    height: 500px;
+    background-color: #F6F6F6;
+    padding: 10px 20px 30px 20px;
+    gap: 20px;
+    margin-left: 80px;
+    box-shadow:0px 4px 4px 0px #D9D9D9;
+}
+.infocontainer h5,span{
+    color: #FABC01;
+    font-size: 32px;
+    line-height: 38.40px;
+    font-weight: 700;
+}
+.infocontainer span{
+    color: black;
+    margin-left: 50px;
+}
 /* footer */
-  footer{
+footer{
     color: white;
-  }
-  .piedpage{
+    display: grid;
+    place-items: center;
+    
+}
+.piedpage{
     position: relative;
     width: 100%;
+    top:10;
 
-  }
-  .piedpage img{
+}
+.piedpage img{
     width: 100%;
     object-fit: cover;
-  }
-  .piedpage div{
-    left: 10%;
-  }
-  .piedpage_container{
+}
+.piedpage_container{
     position: absolute;
-    top: 33%;
+    top: 25%;
     display: flex;
-    left: 2%;
-  }
-  .linefooter{
+    margin-left: 10%;
+}
+.piedpage_container div{
+    padding-right: 22rem;
+}
+.piedpage_container a{
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 400;
+
+}
+.piedpage_container ul{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.piedpage_container h1{
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.linefooter{
     position: absolute;
-    top: 80%;
-    width: 100%;
-  }
-  .linefoot{
-    width: 75%;
-    border: 2px solid black;
-  }
+    top: 65%;
+    text-align: center;
+    margin-left: 10%;
+    width: 80%;
+}
+.linefooter i{
+    color: white;
+}
+.linefooter .line{
+    border: 4px solid white;
+}
 
 
 
