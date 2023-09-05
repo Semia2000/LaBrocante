@@ -22,4 +22,7 @@ Route::get('bienvenue', function () {
 Route::get('detailproduit', function () {
     return view('detailproduit');
 })->name('detailproduit');
+Route::get('suggestion', function () {
+    return view('suggestion');
+})->name('suggestion');
 

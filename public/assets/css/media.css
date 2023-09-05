@@ -1,0 +1,168 @@
+@media (max-width: 767px) {
+    body {
+        overflow-x: hidden;
+        min-width: 320px;
+    }
+
+    /* nav */
+    .navbar-expand-lg .container {
+        flex-direction: column;
+    }
+
+    #navbarNav {
+        text-align: left;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav .nav-link {
+        color: black !important;
+        font-weight: 700;
+        background-color: white;
+        border: none;
+    }
+    nav .nav-item:last-child {
+        color: black !important;
+        font-size: 60px;
+    }
+
+    .search-item {
+        text-align: center;
+    }
+
+    .navbar-toggler {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .offcanvas-body {
+        padding: 10px;
+    }
+
+    .category-list ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .category-list ul li {
+        margin-bottom: 5px;
+    }
+
+    /* acceuil */
+    #intro-example .mask {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    #intro-example .text-white {
+        padding: 20px;
+        margin-top: 0;
+    }
+
+    /* connexion */
+    .connexion {
+        margin-left: 0;
+        height: 800px;
+    }
+
+    .imagesproduit img {
+        width: 100px;
+    }
+}
+
+@media (max-width : 430px) {
+    .imagesproduit img {
+        width: 50px;
+    }
+}
+
+@media (max-width : 1300px) {
+    .search-item {
+        margin-left: 0;
+    }
+
+    #navbarNav {
+        margin-left: 10px;
+    }
+
+    #navbarNav li a {
+        margin-left: 20px;
+    }
+
+    nav .nav-item:last-child {
+        margin-left: 20px;
+    }
+
+}
+
+@media (min-width: 992px) {
+
+    /* acceuil */
+    #intro-example {
+        height: 600px;
+    }
+}
+
+@media (max-width: 1200px) {
+
+    /* footer */
+    footer {
+        text-align: center;
+        height: 40%;
+    }
+
+    footer .row {
+        margin: 0;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .linefooter {
+        padding-top: 20px;
+    }
+
+    footer .row h5 {
+        margin-top: 20px;
+    }
+
+    .infoproduit,
+    .infodetail {
+        display: inline;
+        margin-left: 0;
+    }
+
+    .imgproduits {
+        width: 100%;
+        margin: 0;
+    }
+
+    .detailproduit,
+    .imagesproduit,
+    .actionproduit,
+    .infocontainer {
+        width: 100%;
+        margin-top: 10%;
+        margin-left: 0;
+    }
+
+    .imagesproduit {
+        width: 100%
+    }
+
+    .imagesproduit {
+        width: 100%;
+    }
+
+    .dashes h5 {
+        width: 100%;
+    }
+}
+
+/* footer */
+@media (max-width: 320px) {
+    footer {
+        min-width: 100%;
+        text-align: center;
+    }
+}
