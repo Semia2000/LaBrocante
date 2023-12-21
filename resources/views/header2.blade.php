@@ -15,26 +15,26 @@
     <body>
         <header>
             <nav class="navbar navbar-expand-lg navbar-light ">
-                <div class="container">
-                <div class="d-flex">
-                    <a class="navbar-brand" href="#">
-                        <img src="{{ asset('assets/images/Logo 1.png') }}" alt="Brocante" width="150" height="50">
-                    </a>
-                </div>
+                <div class="container-fluid justify-content-between">
+                    <div class="d-flex">
+                        <a class="navbar-brand" href="#">
+                            <img src="{{ asset('assets/images/Logo 1.png') }}" alt="Brocante" width="100" height="50">
+                        </a>
+                    </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
               <div class="collapse navbar-collapse" id="navbarNav">
-                <div class="w-auto my-auto d-none d-sm-flex search-item">
+                <div class="search-item">
                     <div class="dropdown">
                         <div class="dropdown-icon dropdown-toggle" id="dropdown-icon" data-bs-toggle="dropdown" aria-expanded="false" >
                         Article</div>
                         <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Femmes</a></li>
-                        <li><a class="dropdown-item" href="#">Hommes</a></li>
-                        <li><a class="dropdown-item" href="#">Enfants</a></li>
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </div>
                     <div class="vertical-line"></div>
@@ -45,15 +45,43 @@
                     <input  type="search" placeholder="Faire une recherche..." aria-label="Search">
                     </div>
                 </div>
-                <ul class="navbar-nav navbarmenu mr-auto">
+                <ul class="navbar-nav iconliens flex-row d-none d-md-flex">
+                    <li class="nav-item me-3 me-lg-1 active">
+                      <a class="nav-link" href="#">
+                        <span><i class="bi bi-bell"></i></span>
+                      </a>
+                    </li>
+
+                    <li class="nav-item me-3 me-lg-1">
+                      <a class="nav-link" href="#">
+                        <span><i class="bi bi-envelope"></i></span>
+                      </a>
+                    </li>
+
+                    <li class="nav-item me-3 me-lg-1">
+                      <a class="nav-link" href="#">
+                        <span><i class="bi bi-cart3"></i></span>
+                      </a>
+                    </li>
+
+                    <li class="nav-item me-3 me-lg-1">
+                      <a class="nav-link" href="#">
+                        <span><i class="bi bi-heart"></i></span>
+                      </a>
+                    </li>
+
+                    <li class="nav-item me-3 me-lg-1">
+                      <a class="nav-link" href="#">
+                        <span><i class="bi bi-circle"></i></span>
+                      </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav navbarmenu">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('categories') }}">Acheter un article</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('detailproduit') }}">Acheter un article</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link inscrire" href="{{ route('bienvenue') }}">S'inscrire &nbsp;&nbsp;<i class="bi bi-person-circle"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <i class="bi bi-list deroulante" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
+                        <i class="bi bi-list" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style=" font-size:40px;margin-left: 50px;color:#FABC01;font-weight:bold;margin-top:5px;"></i>
                         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                         <div class="offcanvas-header">
                             <h4 class="offcanvas-title" id="offcanvasRightLabel"><b>Catégories Produits</b></h4>
@@ -82,6 +110,5 @@
         <main>
              @yield('content')
         </main>
-        @yield('script')
     </body>
 </html>

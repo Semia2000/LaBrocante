@@ -1,11 +1,11 @@
 @extends('layout')
 @section('content')
- <div>
-    <div class="connexion">
+ <div class="container">
+    <div class="row col-lg-4 connexion">
         <div>
-        <h1>Bienvenue!</h1>
+        <h2>Bienvenue!</h2>
         <br>
-        <p><a href=""><img src="{{ asset('assets/socialmedia/facebook.png') }}" alt="" width="35"> Continuer avec facebook</a></p>
+        <p><a href="{{ route('inscrire') }}"><img src="{{ asset('assets/socialmedia/facebook.png') }}" alt="" width="35"> Continuer avec facebook</a></p>
         <br>
         <p><a href=""><img src="{{ asset('assets/socialmedia/google.png') }}" alt="" width="35">&nbsp;Continuer avec google</a></p>
         <br>

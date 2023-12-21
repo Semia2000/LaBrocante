@@ -38,11 +38,6 @@
               </div>
 
             </div>
-            <!--Grid row-->
-          </div>
-          <!-- Grid container -->
-
-          <!-- Copyright -->
             <div class="linefooter">
                 <div class="line"></div>
                     <div class="social-icons">
@@ -53,7 +48,7 @@
                     </div>
                 <div class="line"></div>
             </div>
-          <!-- Copyright -->
+          </div>
     </footer>
 
 

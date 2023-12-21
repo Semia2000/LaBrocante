@@ -15,18 +15,16 @@ a {
 }
 
 nav {
-    margin: 0;
-    padding: 0;
     box-shadow: 0px 2px 0px 0px black;
     text-align: center;
     background-color: white;
 }
-
 .search-item {
     display: flex;
     align-items: center;
     background-color: #F4F4F4;
-    margin-left: 5%;
+    width: fit-content;
+    margin-left: 10rem;
 }
 
 .dropdown-icon,
@@ -49,34 +47,42 @@ nav {
 }
 
 .liens,
-.nav-link {
+.navbarmenu .nav-link {
     color: white !important;
     font-weight: 700;
     background-color: #FABC01;
     border-radius: 5px;
-    padding: 5px 10px 5px 10px;
+    padding: 5px 5px 5px 5px;
+}
+.navbarmenu .inscrire{
+    border-bottom-right-radius:15% 50%;
+    border-top-right-radius:15% 50%;
 }
 
-nav .nav-link {
-    width: 150px;
+#navbarNav .navbarmenu{
+    margin-left: 15rem;
 }
 
-#navbarNav {
-    margin-left: 100px;
-}
-
-#navbarNav li a {
+#navbarNav .navbarmenu li a {
     box-shadow: 0px 4px 4px 0px #D9D9D9;
     text-align: center;
     margin-top: 15px;
-    margin-left: 50px;
+    margin-left: 3rem;
+    width: max-content;
 }
 
+.deroulante{
+    font-size:40px;
+    margin-left: 3rem;
+    color:#FABC01;
+    font-weight:bold;
+    margin-top:5px;
+}
 /* offcanvas */
 .offcanvas {
-    height: 590px;
+    height: 800px;
     width: 340px;
-    margin-top: 95px;
+    margin-top: 5%;
     box-shadow: 4px 4px 4px 4px #3f3f3f;
 }
 
@@ -104,52 +110,50 @@ nav .nav-link {
 }
 
 /* bg-image */
-#intro-example {
+.bg-image {
+    position: relative;
+    max-width: 100%;
+}
+#intro-example img {
+    width: 100%;
     object-fit: cover;
-    height: 800px;
+    height: 600px;;
 }
 
 .mask {
+    position: absolute;
     background-color: white !important;
-    width: 350px;
-    height: 200px;
+    width:320px;
+    height:auto;
     border-radius: 5px;
-    margin-top: 14%;
-    margin-left: 23%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
 }
 
 .mask h1 {
     font-size: 1.5rem;
-    margin-bottom: 10px;
     color: black;
+    font-weight: 700;
 }
 
 .text-white {
     display: flex;
     flex-direction: column;
-    text-align: center;
     align-items: center;
-    justify-content: center;
 }
 
 .mask a {
     font-size: 20px;
-    padding: 5px 10px 5px 10px;
     margin-bottom: 1rem;
     box-shadow: 0px 4px 4px 0px #D9D9D9;
     width: 200px;
-
 }
 
 
 /* Produits */
 .line {
-    border: 3px solid #FABC01;
+    border: 2px solid #FABC01;
 }
 
 .produits {
@@ -161,8 +165,7 @@ nav .nav-link {
     margin-bottom: 3rem;
 }
 
-.produits .square {
-    width: 220px;
+.square{
     height: 250px;
     border: 3px solid #FABC01;
     border-radius: 5px;
@@ -170,7 +173,8 @@ nav .nav-link {
     position: relative;
 }
 
-.produit .square img {
+
+ .square img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -179,15 +183,15 @@ nav .nav-link {
     left: 0;
 }
 
-.produits h1 {
+.produits h1{
     margin-bottom: 0.5rem;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: black;
 }
 
 .produit .info h1 {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .produit .info {
@@ -205,6 +209,7 @@ nav .nav-link {
     padding: 5px 0;
 }
 
+
 .circle {
     width: 24px;
     height: 20px;
@@ -216,15 +221,14 @@ nav .nav-link {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-template-rows: auto;
-    gap: 20px;
+    gap: 40px;
     padding-bottom: 2rem;
 }
 
 .suggestion {
-    min-width: 200px;
-    height: 50px;
-    background-color: #D9D9D9;
-    margin-left: 10px;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
 }
 
 .seemore {
@@ -238,20 +242,13 @@ nav .nav-link {
 
 /* detailproduit */
 .ficheproduit {
-    width: 100%;
     margin-top: 100px;
-}
 
-.infoproduit,
-.infodetail {
-    display: flex;
 }
-
 .imgproduits {
-    width: 500px;
-    height: 520px;
+    height: 500px;
     border-radius: 7px;
-    box-shadow: 1px 1px 1px 2px #D9D9D9;
+    box-shadow: 1px 1px 2px 2px #D9D9D9;
     position: relative;
     overflow: hidden;
 }
@@ -265,103 +262,146 @@ nav .nav-link {
     left: 0;
 }
 
-.detailproduit {
-    margin-left: 50px;
-    width: 60%;
-}
-
-.detailproduit .line {
+/* .detailproduit .line {
     width: 100%;
-}
+} */
 
-.imagesproduit {
-    margin-top: 40px;
-}
-
-.imagesproduit,
 .actionproduit {
     display: flex;
 }
-
-.infoproduit {
-    margin-left: 3%;
+/* #recipeCarousel .card-img{
+height: 150px;
+box-shadow: 10px 10px 20px #D9D9D9;
 }
+#recipeCarousel .card-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
 
+/* carrousel */
+@media (max-width: 767px) {
+    .carousel-inner .carousel-item > div {
+        display: none;
+    }
+    .carousel-inner .carousel-item > div:first-child {
+        display: block;
+    }
+  }
 
+  .carousel-inner .carousel-item.active,
+  .carousel-inner .carousel-item-next,
+  .carousel-inner .carousel-item-prev {
+    display: flex;
+  }
 
-.imagesproduit img {
-    width: 152px;
-    height: 152px;
-    border-radius: 5px;
-    box-shadow: 1px 1px 1px 2px #D9D9D9;
-    margin-left: 20px;
-}
+  /* medium and up screens */
+  @media (min-width: 768px) {
 
-.imagesproduit i {
-    font-size: 22px;
-    font-weight: 700;
-    color: #142A54;
-    margin-top: 50px
-}
+    .carousel-inner .carousel-item-end.active,
+    .carousel-inner .carousel-item-next {
+      transform: translateX(25%);
+    }
 
-.actionproduit {
-    margin-left: 70px;
-}
+    .carousel-inner .carousel-item-start.active,
+    .carousel-inner .carousel-item-prev {
+      transform: translateX(-25%);
+    }
+  }
+
+  .carousel-inner .carousel-item-end,
+  .carousel-inner .carousel-item-start {
+  transform: translateX(0);
+  }
 
 .actionproduit a {
     margin-left: 20px;
     margin-top: 40px;
     font-size: 20px;
-    font-weight: 700;
     box-shadow: 0px 4px 4px 0px #D9D9D9;
 }
+.actionproduit{
+    margin-left: 10%;
+}
 
-.infoproduit h1 {
-    font-size: 30px;
+.infodetail h1 {
+    font-size: 25px;
     font-weight: 700;
 }
 
-.infoproduit i {
-    font-size: 25px;
+.infodetail .detailproduit i:last-child {
+    margin-left: 10%;
+}
+.detailproduit{
+    margin-left: 40px;
+}
+.infodetail i {
+    font-size: 30px;
 }
 
-.infoproduit P {
+.infodetail P {
     font-size: 18px;
     font-weight: 700;
-    margin-top: 15px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    text-align: left;
 }
 
-.infoproduit h3 {
-    font-size: 30px;
+.infodetail h3 {
+    font-size: 28px;
     font-weight: 700;
     color: #FABC01;
 }
 
 .infocontainer {
-    width: 500px;
+    width: auto;
     height: 500px;
     background-color: #F6F6F6;
-    padding: 10px 20px 30px 20px;
-    margin-left: 70px;
+    padding: 10px 20px 10px 20px;
+    display:flex;
     box-shadow: 0px 4px 4px 0px #D9D9D9;
-    display: flex;
-    margin-top: 20px;
+    margin-top: 30px;
+    margin-left: 20%;
 }
 
 .infocontainer h5 {
-    font-size: 32px;
-    line-height: 38.40px;
+    font-size: 25px;
     font-weight: 700;
 }
 
-.info-item {
+.info-item h5 {
     color: #FABC01;
+    padding-top: 7px;
 }
 
 .dashes h5 {
     color: black;
-    margin-left: 15px;
+    margin-left: 20px;
+    padding-top: 7px;
+}
+/* panier */
+.panier .card{
+    box-shadow: 10px 10px 20px #D9D9D9;
+    border: none;
+}
+.panier .card .square{
+    height: 180px;
+    border-radius: 2px;
+    margin: 10px;
+}
+.panierbutuon{
+    color: white ;
+    font-weight: 700;
+    border-radius: 3px;
+    padding: 5px 10px 5px 10px;
+}
+.panier .card-body p, .panier .card-body i{
+    font-weight: 700;
+    font-size: 20px;
+}
+.panier .card-body {
+    padding-top: 10px;
+    padding-left: 0;
 }
 
 /* footer */
@@ -426,23 +466,18 @@ footer .row .linefooter {
 
 .linefooter .line {
     border: 4px solid white;
-    width: 80%;
-    margin-left: 9%;
 }
 
 /* bienvenue.blade.php */
 
-.connexion {
-    max-width: 487px;
+.connexion,.usernameconfirm{
     margin-top: 50px;
     padding: 20px;
-    height: 600px;
+    height: max-content;
     box-shadow: 2px 2px 2px 2px gray;
-    ;
     border-radius: 6px;
     text-align: center;
-    padding: 4%;
-    margin-left: 40%;
+    margin-left: 35%;
 
 }
 
@@ -490,3 +525,12 @@ h2 {
     margin-left: 10%;
     margin-top: 5%;
 }
+/* inscrire */
+.form-control {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #ccc;
+  }
+  .form-check-label a{
+    color: #FABC01;
+  }
