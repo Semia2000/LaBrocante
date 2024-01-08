@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.layout')
 @section('content')
 <section class="panier">
    <div class="container">
@@ -117,6 +117,8 @@
               </div>
         </div>
     </div>
+
+
 </div>
 </section>
 

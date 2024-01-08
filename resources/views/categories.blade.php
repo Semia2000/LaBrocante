@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.layout')
 @section('content')
     <div class="bg-image">
         <div id="intro-example">
@@ -338,5 +338,5 @@
     <div class="seemore">
         <a href="" class="liens">Voir plus</a>
     </div>
-    @include('footer')
+    @include('partials.footer')
 @endsection

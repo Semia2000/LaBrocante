@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class RoleUserSeeder extends Seeder
 {
@@ -15,5 +17,21 @@ class RoleUserSeeder extends Seeder
     public function run()
     {
         //
+
+        $users = DB::table('users')->take(4)->get();
+
+        // Récupérer quatre rôles de la base de données
+        $roles = DB::table('roles')->take(4)->get();
+
+        // Associer chaque utilisateur à un rôle
+        foreach ($users as $index => $user) {
+            DB::table('role_users')->insert([
+                'id' => Str::uuid(),
+                'user_id' => $user->id,
+                'role_id' => $roles[$index]->id,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+        }
     }
 }
