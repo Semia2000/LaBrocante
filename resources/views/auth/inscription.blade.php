@@ -3,7 +3,7 @@
     <div class="container mt-5">
         <div class="row col-lg-4 usernameconfirm">
             <div>
-                <h2 style="margin: 0">Connexion</h2>
+                <h2 style="margin: 0">Inscription</h2>
                 <form action="{{ route('login') }}" method="POST">
                     @csrf
                     <div class="form-group mt-5">
@@ -20,7 +20,7 @@
                             Se souvenir de moi </label>
                     </div>
                     <div class="form-check mt-4">
-                        <p>Vous n'avez pas un compte? <a href="{{ route('register') }}">S'inscrire</a></p>
+                        <p>Vous avez pas un compte? <a href="{{ route('login') }}">Se connecter</a></p>
                     </div>
                     <button type="submit" style="background-color: #FABC01;color:white"
                         class="btn  mt-5">Continuer</button>

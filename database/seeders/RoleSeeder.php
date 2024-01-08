@@ -18,7 +18,7 @@ class RoleSeeder extends Seeder
     {
         //
 
-        $roles = ['superAdmin', 'administrateur', 'vendeur', 'acheteur'];
+        $roles = ['superAdmin', 'administrateur', 'utilisateur'];
 
         foreach ($roles as $role) {
             DB::table('roles')->insert([
@@ -28,5 +28,7 @@ class RoleSeeder extends Seeder
                 'updated_at' => now(),
             ]);
         }
+
+        
     }
 }
