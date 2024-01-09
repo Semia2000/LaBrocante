@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VerificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,8 @@ Route::get('panier', function () {
     return view('panier');
 })->name('panier');
 
-Route::get('home', function(){
-  return view('home');
+Route::get('home', function () {
+    return view('home');
 })->name('home');
+
+Route::get('/verify-otp', [VerificationController::class, 'showVerificationForm'])->name('verify-otp');

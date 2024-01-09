@@ -26,7 +26,7 @@ class RoleUserSeeder extends Seeder
         // Associer chaque utilisateur à un rôle
         foreach ($users as $index => $user) {
             DB::table('role_users')->insert([
-                'id' => Str::uuid(),
+             //   'id' => Str::uuid(),
                 'user_id' => $user->id,
                 'role_id' => $roles[$index]->id,
                 'created_at' => now(),

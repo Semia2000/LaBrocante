@@ -17,7 +17,7 @@
                 <br>
             </div>
             <br>
-            <h5> S'inscrire avec <a href="#">e-mail</a></h5>
+            <h5> S'inscrire avec <a href="{{ route('register') }}">e-mail</a></h5>
             <h5>vous avez deja un compte? <a href="{{ route('login') }}">Se connecter</a></h5>
         </div>
     </div>

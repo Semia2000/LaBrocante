@@ -6,7 +6,7 @@ use App\Traits\UUID;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class RoleUser extends Model
+class Subscribers extends Model
 {
     use  HasFactory, UUID;
 
@@ -16,9 +16,11 @@ class RoleUser extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-       // 'id',
-        'user_id',
-        'role_id'
+        'id',
+        'email',
+        'token',
+        'status'
     ];
 
+    
 }
