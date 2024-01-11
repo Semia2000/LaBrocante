@@ -27,7 +27,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
               <div class="collapse navbar-collapse" id="navbarNav">
-                <div class="w-auto my-auto d-none d-sm-flex search-item">
+                <div class="mx-auto my-auto d-none d-sm-flex search-item">
                     <div class="dropdown">
                         <div class="dropdown-icon dropdown-toggle" id="dropdown-icon" data-bs-toggle="dropdown" aria-expanded="false" >
                         Article</div>
@@ -45,14 +45,21 @@
                     <input  type="search" placeholder="Faire une recherche..." aria-label="Search">
                     </div>
                 </div>
-                <ul class="navbar-nav navbarmenu mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('categories') }}">Acheter un article</a>
+                <ul class="navbar-nav navbarmenu d-flex ms-auto">
+                    <li class="nav-item me-3 me-lg-1 active">
+                        <a class="nav-link icons" href="#">
+                          <span><i class="bi bi-bag"></i></span>
+                        </a>
+                    </li>
+                    <li class="nav-item me-3 me-lg-1 active">
+                        <a class="nav-link icons" href="#">
+                          <span><i class="bi bi-bell"></i></span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link inscrire" href="{{ route('bienvenue') }}">S'inscrire &nbsp;&nbsp;<i class="bi bi-person-circle"></i></a>
+                        <a class="nav-link inscrire" href="{{ route('bienvenue') }}">S'inscrire&nbsp;<i class="bi bi-person-circle"></i></a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <i class="bi bi-list deroulante" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
                         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                         <div class="offcanvas-header">
@@ -73,7 +80,7 @@
                             </div>
                         </div>
                         </div>
-                    </li>
+                    </li> --}}
                 </ul>
               </div>
             </div>
