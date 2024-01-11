@@ -14,7 +14,9 @@ use App\Actions\Fortify\ResetUserPassword;
 use App\Actions\Fortify\UpdateUserPassword;
 use Illuminate\Support\Facades\RateLimiter;
 use App\Actions\Fortify\UpdateUserProfileInformation;
+use App\Http\Responses\RegisterResponse;
 use Laravel\Fortify\Contracts\LogoutResponse;
+use Laravel\Fortify\Contracts\LoginResponse;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -24,6 +26,13 @@ class FortifyServiceProvider extends ServiceProvider
     public function register(): void
     {
         //
+
+        $this->app->instance(RegisterResponse::class, new class implements RegisterResponse {
+            public function toResponse($request)
+            {
+                return redirect('/verify-otp');
+            }
+        });
         $this->app->instance(LogoutResponse::class, new class implements LogoutResponse {
             public function toResponse($request)
             {
@@ -51,6 +60,7 @@ class FortifyServiceProvider extends ServiceProvider
             return view('auth.inscription');
         });
 
+
         RateLimiter::for('login', function (Request $request) {
             $throttleKey = Str::transliterate(Str::lower($request->input(Fortify::username())).'|'.$request->ip());
 
@@ -69,5 +79,7 @@ class FortifyServiceProvider extends ServiceProvider
                 return $user;
             }
         });
+
+
     }
 }

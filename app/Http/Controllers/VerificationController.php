@@ -10,6 +10,6 @@ class VerificationController extends Controller
 
     public function showVerificationForm(Request $request)
     {
-        return view('')
+        return view('otpVerification.otpVerification');
     }
 }

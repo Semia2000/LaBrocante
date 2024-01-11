@@ -9,6 +9,7 @@ use App\Mail\SendOtp;
 use Ichtrojan\Otp\Otp;
 use App\Models\OtpCode;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\RedirectResponse;
@@ -53,7 +54,10 @@ class CreateNewUser implements CreatesNewUsers
                 ->send(new SendOtp($CodeOtp));
               //  return redirect()->route('verify-otp');
               //return app(RedirectResponse::class)->intended('verify-otp');
-              
+           //   return $user;
+          // Auth::login($user);
+           return redirect()->route('verify-otp');
+
         } catch (\Exception $e) {
 
             throw ValidationException::withMessages(['email' => 'Erreur lors de l\'envoi du code OTP']);
