@@ -56,7 +56,8 @@ class CreateNewUser implements CreatesNewUsers
               //return app(RedirectResponse::class)->intended('verify-otp');
            //   return $user;
           // Auth::login($user);
-           return redirect()->route('verify-otp');
+          // return redirect()->route('verify-otp');
+          return $user;
 
         } catch (\Exception $e) {
 

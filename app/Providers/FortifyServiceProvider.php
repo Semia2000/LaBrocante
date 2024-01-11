@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Laravel\Fortify\Fortify;
+use App\Responses\RegisterResponse;
 use Illuminate\Support\Facades\Hash;
 use App\Actions\Fortify\CreateNewUser;
 use Illuminate\Support\ServiceProvider;
@@ -13,10 +14,10 @@ use Illuminate\Cache\RateLimiting\Limit;
 use App\Actions\Fortify\ResetUserPassword;
 use App\Actions\Fortify\UpdateUserPassword;
 use Illuminate\Support\Facades\RateLimiter;
-use App\Actions\Fortify\UpdateUserProfileInformation;
-use App\Http\Responses\RegisterResponse;
-use Laravel\Fortify\Contracts\LogoutResponse;
 use Laravel\Fortify\Contracts\LoginResponse;
+use Laravel\Fortify\Contracts\LogoutResponse;
+use App\Actions\Fortify\UpdateUserProfileInformation;
+use Laravel\Fortify\Contracts\RegisterResponse as RegisterResponseContract;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -26,6 +27,11 @@ class FortifyServiceProvider extends ServiceProvider
     public function register(): void
     {
         //
+
+        $this->app->bind(
+            RegisterResponseContract::class,
+            RegisterResponse::class
+        );
         $this->app->instance(LogoutResponse::class, new class implements LogoutResponse {
             public function toResponse($request)
             {

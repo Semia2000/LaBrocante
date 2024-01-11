@@ -534,3 +534,30 @@ h2 {
   .form-check-label a{
     color: #FABC01;
   }
+
+/* Verification styles */
+
+.otp-wrapper {
+    display: grid;
+    grid-template-columns: 30px 30px 30px 30px;
+    /* max-width: 400px; */
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+  }
+  .otp-wrapper input:focus {
+    outline: none;
+  }
+  .otp-wrapper input {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border:1px solid #000000;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #000000;
+  }
+  .otp-wrapper input::placeholder {
+    color: #ffffff50
+  }
