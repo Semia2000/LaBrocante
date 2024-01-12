@@ -1,8 +1,9 @@
 <?php
 
+use App\Http\Controllers\NewsletterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VerificationController;
-
+use App\Http\Controllers\NewsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,3 +49,6 @@ Route::get('home', function () {
 
 Route::get('/verify-otp', [VerificationController::class, 'showVerificationForm'])->name('verify-otp');
 Route::post('/validate-otp', [VerificationController::class, 'valideOtpCode'])->name('validate-otp');
+
+// Newsletter
+Route::get('/emails/Newsletter', [NewsController::class, 'sendernewsletter']);
