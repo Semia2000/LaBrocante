@@ -582,9 +582,9 @@ footer .row a {
     justify-content: center;
 }
 .connexion,
-.usernameconfirm {
+.usernameconfirm,.otpconfirm {
     width: 25%;
-    padding: 20px; 
+    padding: 20px;
     margin: 0 auto;
     text-align: center;
     box-sizing: border-box;
@@ -593,8 +593,14 @@ footer .row a {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
 }
-.usernameconfirm {
+.usernameconfirm,.otpconfirm{
     width: 35%;
+}
+.otpconfirm .prompt p{
+    font-family: 'Inria Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
 }
 .connexion h2{
     font-family: 'Inria Sans';
@@ -603,7 +609,6 @@ footer .row a {
     font-size: 30px;
     line-height: 48px;
     color: #22577A;
-
 
 }
 .connexion p {
@@ -622,7 +627,7 @@ footer .row a {
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
-    line-height: 29px; 
+    line-height: 29px;
     color: #22577A;
 }
 

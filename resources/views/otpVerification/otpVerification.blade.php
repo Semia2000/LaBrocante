@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 @section('content')
-    <div class="container mt-5">
-        <div class="row col-lg-8 usernameconfirm">
+    <section id="connexionpage" class="d-flex align-items-center justify-content-center">
+        <div class="otpconfirm  container">
             <div>
                 {{-- <h2 style="margin: 0">Vérification</h2> --}}
                 {{-- <form action="{{ route('login') }}" method="POST">
@@ -19,12 +19,12 @@
                         class="btn  mt-5">Continuer</button>
                 </form> --}}
                 <div class="prompt">
-                    Entrez le code généré dans votre boîte postale pour vous connecter !
+                    <p>Entrez le code généré dans votre boîte postale pour vous connecter !</p>
                 </div>
 
                 <form action = "{{ route('validate-otp') }}" method="POST">
                     @csrf
-                    <div class="otp-wrapper ">
+                    <div class="otp-wrapper mt-4">
                         <input type="text" name="otp[]" class="otp-input text-[32px] text-center form-input"
                             placeholder="0">
                         <input type="text" name="otp[]" class="otp-input text-[32px] text-center form-input"
@@ -41,17 +41,19 @@
                         </div>
                     @endif
 
-                    <div class="d-flex justify-content-between">
-                        <p>
-                            Vous n'avez pas reçu de code otp
+                    <div class="d-flex justify-content-center">
+                        <p class="text-center mt-4 fs-4">
+                            Vous n'avez pas reçu de code otp ? &nbsp;<a href="" style="color: #274060;
+                            font-size: 25px;font-weight: 700;line-height: 24px;letter-spacing: 0em;">Renvoyer</a>
                         </p>
-                        <button type="submit" style="background-color: #FABC01;color:white" class="btn ">Envoyer</button>
                     </div>
                 </form>
 
             </div>
         </div>
-    </div>
+    </section>
+
+
 
     <script>
         document.querySelectorAll('.otp-input').forEach((element, index, array) => {
