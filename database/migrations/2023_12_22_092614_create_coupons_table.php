@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('type');
             $table->string('value');
             $table->string('description');
-            $table->timestamps('uses_times');
-            $table->timestamps('used_times');
+            $table->dateTime('uses_times');
+            $table->timestamp('used_times');
             $table->date('start_date');
             $table->date('expire_date');
             $table->boolean('status')->default(true);

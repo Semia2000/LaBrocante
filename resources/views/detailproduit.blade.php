@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.layout')
 @section('content')
     <div class="ficheproduit">
         <div class="container">
@@ -280,7 +280,7 @@
     </div>
     </div>
 
-    @include('footer')
+    @include('partials.footer')
 @endsection
 @section('script')
 <script>

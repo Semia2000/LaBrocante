@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VerificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,9 +29,9 @@ Route::get('detailproduit', function () {
 Route::get('suggestion', function () {
     return view('suggestion');
 })->name('suggestion');
-Route::get('inscrire', function () {
-    return view('inscrire');
-})->name('inscrire');
+// Route::get('connexion', function () {
+//     return view('connexion');
+// })->name('connexion');
 Route::get('acheter', function () {
     return view('categories');
 })->name('categories');
@@ -41,4 +42,9 @@ Route::get('panier', function () {
     return view('panier');
 })->name('panier');
 
+Route::get('home', function () {
+    return view('home');
+})->name('home');
 
+Route::get('/verify-otp', [VerificationController::class, 'showVerificationForm'])->name('verify-otp');
+Route::post('/validate-otp', [VerificationController::class, 'valideOtpCode'])->name('validate-otp');

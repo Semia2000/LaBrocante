@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.layout')
 @section('content')
     <section id="bannierhome" class="d-flex align-items-center justify-content-center" style="background:url('{{ asset('assets/images/Union.png')}}') no-repeat; background-size:cover" >
         <div class="text-center texte ">
@@ -449,5 +449,5 @@
             <span class="ms-auto me-4 "><a href="">S'abonner</a></span>
         </div>
     </div>
-    @include('footer')
+    @include('partials.footer')
 @endsection

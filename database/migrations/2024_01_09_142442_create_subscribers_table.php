@@ -13,10 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('role_users', function (Blueprint $table) {
-          //  $table->uuid('id')->primary();
-            $table->foreignUuid('user_id')->constained('users');
-            $table->foreignUuid('role_id')->constained('roles');
+        Schema::create('subscribers', function (Blueprint $table) {
+            $table->uuid('id')->primary();
+            $table->text('email');
+            $table->text('token');
+            $table->text('status');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('role_users');
+        Schema::dropIfExists('subscribers');
     }
 };

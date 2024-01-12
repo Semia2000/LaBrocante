@@ -1,5 +1,6 @@
 <?php
 
+use App\Providers\MyProvider;
 use Illuminate\Support\Facades\Facade;
 
 return [
@@ -82,7 +83,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'fr',
 
     /*
     |--------------------------------------------------------------------------
@@ -182,9 +183,12 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+
         /*
          * Package Service Providers...
          */
+
+             App\Providers\FortifyServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -194,6 +198,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+       // MyProvider::class,
 
     ],
 

@@ -56,10 +56,24 @@
                           <span><i class="bi bi-bell"></i></span>
                         </a>
                     </li>
+                    @auth
+                    <li class="nav-item">
+                        <a class="nav-link inscrire" href="{{ route('logout') }}"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Déconnexion
+                        &nbsp;&nbsp;<i class="bi bi-person-circle"></i>
+                    </a>
+
+                    <form id="logout-form" method="POST" action="{{ route('logout') }}" style="display: none;">
+                        @csrf
+                    </form></li>
+                    @endauth
+                    @guest
                     <li class="nav-item">
                         <a class="nav-link inscrire" href="{{ route('bienvenue') }}">S'inscrire&nbsp;<i class="bi bi-person-circle"></i></a>
                     </li>
+                    @endguest
                     {{-- <li class="nav-item">
+                    <li class="nav-item">
                         <i class="bi bi-list deroulante" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
                         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                         <div class="offcanvas-header">

@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class RoleSeeder extends Seeder
 {
@@ -15,5 +17,18 @@ class RoleSeeder extends Seeder
     public function run()
     {
         //
+
+        $roles = ['superAdmin', 'administrateur', 'utilisateur'];
+
+        foreach ($roles as $role) {
+            DB::table('roles')->insert([
+                'id' => Str::uuid(),
+                'nom' => $role,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+        }
+
+        
     }
 }

@@ -2,10 +2,11 @@
 
 namespace App\Http\Middleware;
 
-use App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+use App\Providers\RouteServiceProvider;
 
 class RedirectIfAuthenticated
 {
@@ -21,10 +22,20 @@ class RedirectIfAuthenticated
     {
         $guards = empty($guards) ? [null] : $guards;
 
+        $currentRoute = Route::current();
+
+        $name = $currentRoute->getName();
+        $uri = $currentRoute->uri();
+
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
                 return redirect(RouteServiceProvider::HOME);
             }
+
+            if (Auth::guard($guard)->check() && $uri="register") {
+               return redirect(RouteServiceProvider::REGISTERED_REDIRECT);
+            }
+
         }
 
         return $next($request);
