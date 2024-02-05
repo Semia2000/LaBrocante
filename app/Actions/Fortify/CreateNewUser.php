@@ -29,11 +29,13 @@ class CreateNewUser implements CreatesNewUsers
      */
     public function create(array $input): User|RedirectResponse
     {
+        //  dd($input);
+
         $validator = Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => $this->passwordRules(),
-        ]);
+        ])->validate();
 
         $user =  User::create([
             'name' => $input['name'],
@@ -41,7 +43,7 @@ class CreateNewUser implements CreatesNewUsers
             'password' => Hash::make($input['password']),
         ]);
 
-        $role = Role::where('nom','utilisateur')->first();
+        $role = Role::where('nom', 'utilisateur')->first();
 
         $user->roles()->attach($role->id);
 
@@ -52,18 +54,10 @@ class CreateNewUser implements CreatesNewUsers
         try {
             Mail::to($user->email)
                 ->send(new SendOtp($CodeOtp));
-              //  return redirect()->route('verify-otp');
-              //return app(RedirectResponse::class)->intended('verify-otp');
-           //   return $user;
-          // Auth::login($user);
-          // return redirect()->route('verify-otp');
-          return $user;
-
+            return $user;
         } catch (\Exception $e) {
 
             throw ValidationException::withMessages(['email' => 'Erreur lors de l\'envoi du code OTP']);
         }
-
-
     }
 }
