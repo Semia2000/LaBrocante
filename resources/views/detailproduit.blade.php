@@ -59,12 +59,12 @@
                             </a>
                         </div>
                     </div> --}}
-                    <div class=" container text-center my-3">
-                        <div class=" mt-5 row mx-auto my-auto justify-content-center">
+                    <div class="text-center">
+                        <div class=" mt-5 row">
                             <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-inner" role="listbox">
                                     <div class="carousel-item active">
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <div class="card">
                                                 <div class="card-img">
                                                     <img src="https://via.placeholder.com/500x400/31f?text=1" class="img-fluid">
@@ -73,7 +73,7 @@
                                         </div>
                                     </div>
                                     <div class="carousel-item">
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <div class="card">
                                                 <div class="card-img">
                                                     <img src="https://via.placeholder.com/500x400/e66?text=2" class="img-fluid">
@@ -82,7 +82,7 @@
                                         </div>
                                     </div>
                                     <div class="carousel-item">
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <div class="card">
                                                 <div class="card-img">
                                                     <img src="https://via.placeholder.com/500x400/7d2?text=3" class="img-fluid">
@@ -91,7 +91,7 @@
                                         </div>
                                     </div>
                                     <div class="carousel-item">
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <div class="card">
                                                 <div class="card-img">
                                                     <img src="https://via.placeholder.com/500x400?text=4" class="img-fluid">
@@ -100,7 +100,7 @@
                                         </div>
                                     </div>
                                     <div class="carousel-item">
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <div class="card">
                                                 <div class="card-img">
                                                     <img src="https://via.placeholder.com/500x400/aba?text=5" class="img-fluid">
@@ -109,7 +109,7 @@
                                         </div>
                                     </div>
                                     <div class="carousel-item">
-                                        <div class="col-md-3">
+                                        <div class="col-md-4">
                                             <div class="card">
                                                 <div class="card-img">
                                                     <img src="https://via.placeholder.com/500x400/fc0?text=6" class="img-fluid">
@@ -127,18 +127,17 @@
                             </div>
                         </div>
                       </div>
-                    <div class="actionproduit">
-                        <a href="" class="liens">Acheter</a>
-                        <a href="" class="liens">Faire une offre</a>
-                        <a href="" class="liens">Message</a>
+                    <div class="actionproduit mt-5">
+                        <a href="" class="liens me-4">Acheter</a>
+                        <a href="" class="liens ms-5 me-3">Faire une offre</a>
+                        <a href="" class="liens ms-5 ">Message</a>
                     </div>
                 </div>
                 <div class="col-lg-7 infodetail ">
                     <div class="row">
-                        <div class="detailproduit">
+                        <div class="detailproduit ">
                             <h1>Nom produit</h1>
-                            <span><i class="bi bi-heart" style="color:#D84545"></i><i class="bi bi-cart-dash-fill"
-                                    style="color:#FABC01"></i></span>
+                            <span><i class="bi bi-heart me-4" style="color:#D84545"></i><i class="bi bi-cart-dash-fill ms-5" style="color:#FABC01"></i></span>
                             <h3>25000 FCFA</h3>
                             <h1><span class="bi bi-circle" style="color: rgb(194, 190, 190);">&nbsp;&nbsp;&nbsp;</span>Nom
                                 du

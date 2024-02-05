@@ -446,7 +446,7 @@
         <p>Ne manquez pas nos meilleures offres ! Ne vous inquiétez pas, nous ne vous spammerons pas.</p>
         <div class="newsletters ">
             <input type="text" placeholder="Entrez votre email ici" >
-            <span class="ms-auto me-4 "><a href="">S'abonner</a></span>
+            <span class="ms-auto  "><a href="">S'abonner</a></span>
         </div>
     </div>
     @include('partials.footer')
