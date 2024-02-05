@@ -39,12 +39,10 @@
                     @error('passwordConfirmation')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
-6e67cf1f
-v class="form-check mt-4">
                     <input type="checkbox" class="form-check-input" id="exampleCheck" name="remember">
                     <label class="form-check-label" for="exampleCheck">
                         Se souvenir de moi </label>
-                </div> --}}
+                </div>
                 <div class="form-check mt-4">
                     <p>Vous avez un compte ? <a href="{{ route('login') }}"> Se connecter</a></p>
                 </div>
