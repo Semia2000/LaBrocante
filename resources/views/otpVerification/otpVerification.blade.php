@@ -42,9 +42,15 @@
                     @endif
 
                     <div class="d-flex justify-content-center">
+<<<<<<< HEAD
                         <p class="text-center mt-4 fs-5">
                             Vous n'avez pas reçu de code otp ? &nbsp;<a href="" style="color: #274060;
                             font-size: 20px;font-weight: 700;line-height: 24px;letter-spacing: 0em;">Renvoyer</a>
+=======
+                        <p class="text-center mt-4 fs-4">
+                            Vous n'avez pas reçu de code otp ? &nbsp;<a href="{{ route('sendOtpCode', ['id' => $id]) }}" style="color: #274060;
+                            font-size: 25px;font-weight: 700;line-height: 24px;letter-spacing: 0em;">Renvoyer</a>
+>>>>>>> 044dd158a753b3c5abc1794ff20a449276e9cf6d
                         </p>
                     </div>
                     <button type="submit" class="btn">Envoyer</button>

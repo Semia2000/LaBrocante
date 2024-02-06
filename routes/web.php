@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VerificationController;
 
 /*
@@ -9,14 +10,20 @@ use App\Http\Controllers\VerificationController;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
 |
 */
 
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+
 Route::get('header', function () {
     return view('header2');
 })->name('header');
@@ -29,9 +36,6 @@ Route::get('detailproduit', function () {
 Route::get('suggestion', function () {
     return view('suggestion');
 })->name('suggestion');
-// Route::get('connexion', function () {
-//     return view('connexion');
-// })->name('connexion');
 Route::get('acheter', function () {
     return view('categories');
 })->name('categories');
@@ -46,8 +50,18 @@ Route::get('home', function () {
     return view('home');
 })->name('home');
 
-Route::get('/verify-otp', [VerificationController::class, 'showVerificationForm'])->name('verify-otp');
+// Otp routes
+Route::get('/verify-otp/{id}', [VerificationController::class, 'showVerificationForm'])->name('verify-otp');
 Route::post('/validate-otp', [VerificationController::class, 'valideOtpCode'])->name('validate-otp');
+Route::get('/sendOtpCode/{id}', [VerificationController::class, 'sendOtpCode'])->name('sendOtpCode');
 
 
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
 include 'admin.php';
