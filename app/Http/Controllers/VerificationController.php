@@ -4,19 +4,42 @@ namespace App\Http\Controllers;
 
 use Exception;
 use App\Models\User;
+use App\Mail\SendOtp;
 use Ichtrojan\Otp\Otp;
 use App\Models\OtpCode;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use App\Providers\RouteServiceProvider;
 use Ichtrojan\Otp\Models\Otp as ModelsOtp;
+use Illuminate\Validation\ValidationException;
 
 class VerificationController extends Controller
 {
     //
 
-    public function showVerificationForm(Request $request)
+    public function showVerificationForm(Request $request, $id)
     {
-        return view('otpVerification.otpVerification');
+        return view('otpVerification.otpVerification', compact('id'));
+    }
+
+
+    public function sendOtpCode(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+        $otp = new Otp();
+        $identifier = $user->id;
+        $otpCode = $otp->generate($identifier, 'numeric', 4, 15);
+        $CodeOtp = $otpCode->token;
+
+        try {
+            Mail::to($user->email)
+                ->send(new SendOtp($CodeOtp));
+                return redirect()->back();
+
+        } catch (\Exception $e) {
+
+            throw ValidationException::withMessages(['email' => 'Erreur lors de l\'envoi du code OTP']);
+        }
     }
 
     public function valideOtpCode(Request $request)
@@ -39,6 +62,7 @@ class VerificationController extends Controller
                 if ($otpVerify->status === true) {
                     $user = User::findOrFail($identifier);
                     $user->email_verified_at = now();
+                    $user->status = true;
                     $user->save();
                 }
 
